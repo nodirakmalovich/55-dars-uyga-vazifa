@@ -1,0 +1,175 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #212529;
+    border: 1px solid #444;
+}
+
+thead {
+    background-color: #212529;
+
+    th {
+        padding: 12px;
+        text-align: left;
+        font-weight: bold;
+        color: orange;
+        border-bottom: 1px solid #444;
+    }
+}
+
+tbody {
+    tr {
+        &:hover {
+            background-color: #373b3e;
+        }
+
+        td {
+            padding: 10px;
+            color: white;
+            border-bottom: 1px solid #444;
+
+            &:last-child {
+                display: flex;
+                gap: 10px;
+                justify-content: start;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .edit_modal {
+        width: 80%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+
+    .edit_btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 920px) {
+    .container {
+        width: 100%;
+    }
+
+    .edit_btn {
+        width: 100%;
+    }
+
+    .edit_modal {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .edit_modal_input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    .table_dep,
+    .table_email {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .edit_modal {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .edit_modal_input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    table {
+        font-size: 10px;
+        padding: 0;
+    }
+
+    th,
+    td {
+        padding: 4px;
+    }
+
+    .table_btn {
+        width: 40%;
+        font-size: 12px !important;
+    }
+
+    .table_name,
+    .table_num {
+        display: none;
+    }
+
+    .table_actions {
+        text-align: center;
+    }
+
+    tbody {
+        tr {
+           
+            td {
+               
+                &:last-child {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+}
+
+.edit_modal {
+    display: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 auto;
+    position: absolute;
+    width: 50%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    &_input {
+        width: 100%;
+        border: 1px solid rgb(19, 65, 103);
+        border-radius: 4px;
+    }
+}
